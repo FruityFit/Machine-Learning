@@ -7,7 +7,7 @@ import numpy as np
 import os
 
 app = FastAPI()
-model_folder = 'Model\ModelWithCNN\saved_model_h5' #change if its different
+model_folder = 'Model\FruitClassification\ModelWithCNN\saved_model_h5' #change if its different
 current_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(current_dir, model_folder, 'CNNModel.h5')
 print(model_path)
