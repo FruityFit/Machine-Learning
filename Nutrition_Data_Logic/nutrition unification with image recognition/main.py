@@ -9,9 +9,6 @@ with open(json_file_path1, 'r') as json_file:
 with open(json_file_path1, 'r') as json_file:
     on = json.load(json_file)
 
-print(type(o1))
-print(type(on))
-
 def find_label_o1(element, json_data=o1):
     return json_data.get(element, 'data not found')
     
@@ -21,12 +18,6 @@ def find_label_on(element, json_data=on):
         if re.search(fr'\b{element}\b', key):
             return label
     return 'data not found'
-
-print(find_label_o1('Apple Braeburn'))
-print(find_label_on('Apple Braeburn'))
-
-print(find_label_o1('Walnut'))
-print(find_label_on('Walnut'))
 
 
 import csv
@@ -40,7 +31,7 @@ def get_nutrition_data(fruit_name):
                 return nutrition_data
         return 'data not found'
 
-print(get_nutrition_data(find_label_o1('Apple Braeburn')))
-print(get_nutrition_data(find_label_on('Apple Braeburn')))
+print(get_nutrition_data(find_label_o1('Apple')))
+print(get_nutrition_data(find_label_on('Apple')))
 print(get_nutrition_data(find_label_o1('Watermelon')))
 print(get_nutrition_data(find_label_on('Watermelon')))
