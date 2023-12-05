@@ -7,11 +7,12 @@ import os
 
 app = Flask(__name__)
 
-model_folder = 'Model/FruitClassification/ModelWithCNN/saved_model_h5'  # change if it's different
+model_folder = 'Model/FruitClassification/ModelWithCNN/saved_model_h5'  # change the path on the cloud
 current_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(current_dir, model_folder, 'CNNModel.h5')
-print(model_folder)
+#print(model_folder)
 loaded_model = load_model(model_path)
+classes=['Apple', 'Avocado', 'Banana', 'Grape', 'Guava', 'Lemon', 'Mango', 'Orange', 'Peach', 'Pear', 'Strawberry', 'Watermelon']
 
 def preprocess_image(file_path):
     img = image.load_img(file_path, target_size=(100, 100))
@@ -23,13 +24,11 @@ def preprocess_image(file_path):
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # Check if the post request has the file part
         if 'file' not in request.files:
             return jsonify({"error": "No file part"})
 
         file = request.files['file']
 
-        # If the user does not select a file, the browser submits an empty file without a filename
         if file.filename == '':
             return jsonify({"error": "No selected file"})
 
@@ -45,11 +44,10 @@ def predict():
             # Make predictions using the loaded model
             predictions = loaded_model.predict(input_data)
 
-            # Example: Assuming it's a classification task and returning the class with the highest probability
             predicted_class = np.argmax(predictions[0])
             confidence = float(predictions[0][predicted_class])
 
-            return jsonify({"class": int(predicted_class), "confidence": confidence})
+            return jsonify({"class": classes[predicted_class], "confidence": confidence})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
