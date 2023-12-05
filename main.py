@@ -38,6 +38,7 @@ def predict():
             file_path = os.path.join("temp", filename)
             file.save(file_path)
 
+
             # Preprocess the image
             input_data = preprocess_image(file_path)
 
@@ -46,6 +47,7 @@ def predict():
 
             predicted_class = np.argmax(predictions[0])
             confidence = float(predictions[0][predicted_class])
+            os.remove(file_path)
 
             return jsonify({"class": classes[predicted_class], "confidence": confidence})
 
