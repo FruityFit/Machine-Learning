@@ -28,6 +28,11 @@ train_datagen = ImageDataGenerator(
     rescale=1./255,
     horizontal_flip=True,
     vertical_flip=True,
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
     validation_split=0.2
 )
 
@@ -35,7 +40,7 @@ train_datagen = ImageDataGenerator(
 train_generator = train_datagen.flow_from_directory(
     os.path.join(dataset_path, 'Training'),
     target_size=(img_height, img_width),
-    class_mode='sparse',
+    class_mode='categorical',
     batch_size=batch_size,
     subset='training'
 )
@@ -44,7 +49,7 @@ train_generator = train_datagen.flow_from_directory(
 validation_generator = train_datagen.flow_from_directory(
     os.path.join(dataset_path, 'Training'),
     target_size=(img_height, img_width),
-    class_mode='sparse',
+    class_mode='categorical',
     batch_size=batch_size,
     subset='validation'
 )
@@ -62,7 +67,7 @@ model.add(Dropout(0.3))
 model.add(Dense(num_classes, activation='softmax'))
 
 # Compile the model
-model.compile(optimizer='adam', loss="sparse_categorical_crossentropy", metrics=['accuracy'])
+model.compile(optimizer='adam', loss="categorical_crossentropy", metrics=['accuracy'])
 model.summary()
 
 # Train the model
