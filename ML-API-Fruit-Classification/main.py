@@ -16,15 +16,17 @@ loaded_model = load_model(model_path)
 classes=['Apple', 'Avocado', 'Banana', 'Grape', 'Guava', 'Lemon', 'Mango', 'Orange', 'Peach', 'Pear', 'Strawberry', 'Watermelon']
 
 
-
+#path
 json_file_path1 = 'united_results_(o1).json'
 json_file_path2 = 'united_results_(on).json'
+fruitdesc_file_path = 'output.json'
 
 with open(json_file_path1, 'r') as json_file:
     o1 = json.load(json_file)
 with open(json_file_path2, 'r') as json_file:
     on = json.load(json_file)
-
+with open(fruitdesc_file_path, 'r') as json_file:
+    fruits_json = json.load(json_file)
 
 def find_label_o1(element, json_data=o1):
     return json_data.get(element, 'data not found')
@@ -47,6 +49,9 @@ def get_nutrition_data(fruit_name):
             if nutrition_data['name'].title() == fruit_name:
                 return nutrition_data
         return 'data not found'
+
+
+
 def preprocess_image(file_path):
     img = image.load_img(file_path, target_size=(100, 100))
     img_array = image.img_to_array(img)
@@ -81,11 +86,12 @@ def predict():
             predicted_class = np.argmax(predictions[0])
             confidence = float(predictions[0][predicted_class])
             os.remove(file_path)
+
             result = {
                 "confidence": confidence,
+                "description":  fruits_json[classes[predicted_class]],
                 **get_nutrition_data(classes[predicted_class])
             }
-
             return jsonify(result)
 
     except Exception as e:

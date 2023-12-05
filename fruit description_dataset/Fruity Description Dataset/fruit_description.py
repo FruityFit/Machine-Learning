@@ -4,7 +4,7 @@ fruit_description = [
     ""
 
 ]
-fruits = ['Apple', 'Apricot', 'Avocado', 'Banana', 'Beetroot', 'Blueberry', 'Cactus', 'Cantaloupe', 'Cherry', 'Chestnut', 'Clementine', 'Corn', 'Cucumber', 'Dates', 'Eggplant', 'Ginger Root', 'Grape', 'Grapefruit', 'Guava', 'Huckleberry', 'Kiwi', 'Kohlrabi', 'Kumquats', 'Lemon', 'Limes', 'Lychee', 'Mango', 'Melon', 'Mulberry', 'Nectarine', 'Orange', 'Papaya', 'Passion Fruit', 'Peach', 'Pear', 'Pepper', 'Pepper Orange', 'Pineapple', 'Plum', 'Pomegranate', 'Pomelo', 'Potato', 'Quince', 'Rambutan', 'Raspberry', 'Redcurrant', 'Strawberry', 'Tangelo', 'Tomato', 'Watermelon', 'Cocos', 'Kaki', 'Mandarine', 'Mangostan', 'Maracuja', 'Pepino', 'Physalis', 'Physalis With Husk', 'Pitahaya Red', 'Salak', 'Tamarillo']
+fruits = ['Apple', 'Avocado', 'Banana', 'Grape', 'Guava', 'Lemon', 'Mango', 'Orange', 'Peach', 'Pear', 'Strawberry', 'Watermelon']
 
 # for i in fruits:
 #     print(i + " pengertian + manfaat  2 paragraf" )
