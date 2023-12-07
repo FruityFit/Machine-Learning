@@ -19,7 +19,7 @@ classes=['Apple', 'Avocado', 'Banana', 'Grape', 'Guava', 'Lemon', 'Mango', 'Oran
 #path
 json_file_path1 = 'united_results_(o1).json'
 json_file_path2 = 'united_results_(on).json'
-fruitdesc_file_path = 'output.json'
+fruitdesc_file_path = 'fruitDesc.json'
 
 with open(json_file_path1, 'r') as json_file:
     o1 = json.load(json_file)

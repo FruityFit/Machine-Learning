@@ -36,7 +36,7 @@ train_datagen = ImageDataGenerator(
 train_generator = train_datagen.flow_from_directory(
     os.path.join(dataset_path, 'train'),
     target_size=(img_height, img_width),
-    class_mode='sparse',
+    class_mode='binary',
     batch_size=batch_size,
     subset='training'
 )
@@ -45,7 +45,7 @@ train_generator = train_datagen.flow_from_directory(
 validation_generator = train_datagen.flow_from_directory(
     os.path.join(dataset_path, 'train'),
     target_size=(img_height, img_width),
-    class_mode='sparse',
+    class_mode='binary',
     batch_size=batch_size,
     subset='validation'
 )
@@ -60,10 +60,10 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dropout(0.3))
-model.add(Dense(num_classes, activation='softmax'))
+model.add(Dense(1, activation='sigmoid'))
 
 
-model.compile(optimizer='adam', loss="sparse_categorical_crossentropy", metrics=['accuracy'])
+model.compile(optimizer='adam', loss="binary_crossentropy", metrics=['accuracy'])
 model.summary()
 
 epochs = 10
@@ -94,11 +94,11 @@ plt.xlabel('epoch')
 plt.legend(['train', 'validation'], loc='upper left')
 plt.show()
 
-model.save('saved_model/CNNFreshModel')
+model.save('saved_model/CNNFreshModel2')
 
-converter = tf.lite.TFLiteConverter.from_saved_model("saved_model/CNNFreshModel")
+converter = tf.lite.TFLiteConverter.from_saved_model("saved_model/CNNFreshModel2")
 tflite_model = converter.convert()
-with open("saved_model_tflite/CNNFreshModel.tflite", "wb") as f:
+with open("saved_model_tflite/CNNFreshModel2.tflite", "wb") as f:
     f.write(tflite_model)
 
 
