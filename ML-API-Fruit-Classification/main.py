@@ -14,29 +14,17 @@ model_path = 'CNNModel.h5'
 #print(model_folder)
 loaded_model = load_model(model_path)
 classes=['Apple', 'Avocado', 'Banana', 'Grape', 'Guava', 'Lemon', 'Mango', 'Orange', 'Peach', 'Pear', 'Strawberry', 'Watermelon']
-
+classes_indo=['Apel', 'Alpukat', 'Pisang', 'Anggur', 'Jambu', 'Lemon', 'Mangga', 'Jeruk', 'Persik', 'Pir', 'Stroberi', 'Semangka']
 
 #path
 json_file_path1 = 'united_results_(o1).json'
 json_file_path2 = 'united_results_(on).json'
-fruitdesc_file_path = 'fruitDesc.json'
+fruitdesc_file_path = 'FruitDesc.json'
 
-with open(json_file_path1, 'r') as json_file:
-    o1 = json.load(json_file)
-with open(json_file_path2, 'r') as json_file:
-    on = json.load(json_file)
+
 with open(fruitdesc_file_path, 'r') as json_file:
     fruits_json = json.load(json_file)
 
-def find_label_o1(element, json_data=o1):
-    return json_data.get(element, 'data not found')
-
-
-def find_label_on(element, json_data=on):
-    for key, label in json_data.items():
-        if re.search(fr'\b{element}\b', key):
-            return label
-    return 'data not found'
 
 
 import csv
@@ -63,12 +51,12 @@ def preprocess_image(file_path):
 def predict():
     try:
         if 'file' not in request.files:
-            return jsonify({"error": "No file part"})
+            return jsonify({"error": "Permintaan Error"})
 
         file = request.files['file']
 
         if file.filename == '':
-            return jsonify({"error": "No selected file"})
+            return jsonify({"error": "Tidak ada file yang terpilih"})
 
         if file:
             # Save the uploaded file temporarily
@@ -89,8 +77,8 @@ def predict():
 
             result = {
                 "confidence": confidence,
-                "description":  fruits_json[classes[predicted_class]],
-                **get_nutrition_data(classes[predicted_class])
+                "description":  fruits_json[classes_indo[predicted_class]],
+                **get_nutrition_data(classes_indo[predicted_class])
             }
             return jsonify(result)
 
