@@ -34,18 +34,7 @@ class Botie_Google_Bot():
 
 Botie_aricle_recommended = Botie_Google_Bot()
 def get_history_user(fruit_history="Apel anggur Jeruk"):
-    return Botie_aricle_recommended.recommended_article(f"cara membuat jus{fruit_history}")
-
-
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-Botie_aricle_recommended = Botie_Google_Bot()
-
-@app.route('/get_recommended_article/<fruit_history>', methods=['GET'])
-def get_recommended_article(fruit_history):
-    recommended_articles = Botie_aricle_recommended.recommended_article(f"cara membuat jus {fruit_history}")
-    return jsonify(recommended_articles)
+    return Botie_aricle_recommended.recommended_article(f"cara membuat jus {fruit_history}")
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000, debug=True)
+    print(get_history_user("Semangka"))#change heare
