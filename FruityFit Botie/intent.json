@@ -1,0 +1,129 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "Halo!",
+          "Ada orang kah?",
+          "Salam kenal!",
+          "Halo, aku .....",
+          "P",
+          "Assalamualaikum",
+          "Hai",
+          "hey",
+          "heyho",
+          "Hey"
+        ],
+        "responses": [
+          "Halo, saya Botie!",
+          "Haiiii! Adakah yang bisa saya bantu?",
+          "Halo, apa ada yang bisa saya bantu?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": [
+          "Bye",
+          "Dadah",
+          "Sampai jumpa!",
+          "See you later",
+          "Dah"
+        ],
+        "responses": [
+          "See you later, terima kasih sudah mau mampir!",
+          "Byebyee!",
+          "Bye! Come back again soon yaa"
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": [
+          "Thanks",
+          "Thank you",
+          "Terima kasih!",
+          "Makasih",
+          "Terimakasih",
+          "thankyou"
+        ],
+        "responses": [
+          "Happy to help!",
+          "Any time!",
+          "My pleasure",
+          "Sama-sama, senang bisa membantu"
+        ]
+      },
+      {
+        "tag": "types",
+        "patterns": [
+          "apa sih jenis buah di Indonesia?",
+          "Jenis buah di Indonesia ada apa aja?",
+          "Jenis buah ada apa aja?",
+          "sebutkan buah buah yang ada di indonesia",
+          "buah buah apa aja yang ada di Indonesia"
+        ],
+        "responses": [
+          "Berdasarkan hal yang kamu tanyakan, buah buah yang ada di Indonesia adalah ",
+          "Ini informasi adalah informasi buah yang ada di Indonesia, yaitu "
+        ],
+        "links": []
+      },
+      {
+        "tag": "Recommendation",
+        "patterns": [
+          "Berikan saran untuk membuat jus?",
+          "jus enak apa yang dapat dibuat hari ini?",
+          "menurut anda bagaimana jus itu yang enak "
+        ],
+        "responses": [
+          "Botie menyarankan agar membuat jus buah yang enak yaitu  ",
+          "Botie kasih rekomendasi ini buatlah jus ",
+          "Menurut Botie jus terenak adalah "
+        ],
+        "links": []
+      },
+      {
+        "tag": "Nutrition",
+        "patterns": [
+          "Apakah buah apel memiliki banyak nutrisi?",
+          "Beritahu saya tentang nutrisi buah blueberry",
+          "Rasa Nutrisi apa saja yang bisa saya temukan di cherry?",
+          "keuntungan buah jeruk bagi tubuh karena memiliki nutrisi apa?",
+          "buah melon dilihat dari sisi kesehatan memiliki nutrisi?"
+        ],
+        "responses": [
+          "Dalam kesehatan buah AZ ini mengandung ",
+          "ini informasi adalah informasi buah yang ada di Indonesia, yaitu ",
+          "Informasi Nutrisi untuk AZ: "
+        ],
+        "links": []
+      },
+      {
+        "tag": "benefit",
+        "patterns": [
+          "apa keuntungan memakan buah AZ ?",
+          "kegunaan buah az bagi kesehetan ?",
+          "mengapa kita harus memakan buah az?",
+          "mengapa buah az sangat berguna bagi kesehatan?"
+        ],
+        "responses": [
+          "Karena buah ini dapat memiliki manfaat yaitu ",
+          "Buah ini berguna bagi tubuh karena bermanfaat yaitu "
+        ],
+        "links": []
+      },
+      {
+        "tag": "trends",
+        "patterns": [
+          "Apa trend buah yang terkenal di Indonesia sekarang?",
+          "Apa buah yang diminati anak anak muda ?",
+          "Sebutin dong beberapa buah terkenal yang ada di Indonesia"
+        ],
+        "responses": [
+          "Berita yang saya temukan di internet terkait trending adalah di link",
+          "Saya menemukan artikel yang membahas tentang trending buah-buahan yaitu"
+        ],
+        "links": []
+      }
+    ]
+  }
