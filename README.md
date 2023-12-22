@@ -57,7 +57,9 @@ CH2-PS327
   <img src="assets/Botie.jpeg" alt="" height="400" />
 </p>
 Botie employs text classification to predict future events and utilizes various Google products, such as Generative AI, Palm API, TensorFlow, and a custom search API. In addition to typical chatbot functions, Botie examines user history to provide personalized juice recommendations based on individual preferences and nutritional requirements
+
 ### Steps
+
 1. Gather data
 2. Create separate directories for testing and training
 3. Generate JSON for the data
