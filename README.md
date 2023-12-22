@@ -53,3 +53,18 @@ CH2-PS327
 6. Save to SavedModel then convert to tensorflow.lite
 
 ### 3. Chatbot
+<p align="center">
+  <img src="assets/Botie.jpeg" alt="" height="400" />
+</p>
+Botie employs text classification to predict future events and utilizes various Google products, such as Generative AI, Palm API, TensorFlow, and a custom search API. In addition to typical chatbot functions, Botie examines user history to provide personalized juice recommendations based on individual preferences and nutritional requirements
+### Steps
+1. Gather data
+2. Create separate directories for testing and training
+3. Generate JSON for the data
+4. Apply NLTK preprocessing for text data
+5. Utilize NLTK for data augmentation and manipulation
+6. Saved it to class blueprint for advanced deployment
+7. Construct a class blueprint for 2 generative ai and web scraping
+8. Make one class to combine 3 class before for deployment
+9. Save as a SavedModel and convert to H5
+10. deployed in flask server
