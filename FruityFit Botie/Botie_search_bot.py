@@ -3,15 +3,15 @@ from googletrans import Translator
 
 class Botie_Google_Bot:
     def __init__(self):
-        self.api_key = 'AIzaSyB-X8LnxP3SgJB3zByQUvcsfUPgAzlf1zo'
+        self.api_key = 'API_KEY'
         self.youtube_url = 'https://www.googleapis.com/youtube/v3/search'
         self.part = 'snippet'
         self.type = 'video'
 
-        self.search_engine_id = 'a3e237dcedd7845fc'
+        self.search_engine_id = 'CX_ID'
         self.search_url = 'https://www.googleapis.com/customsearch/v1'
 
-        self.ninja_api_key = 'pPzJD+fOb2o2JMf1zVI2aA==DFrXiqIJWnmzuqCJ'
+        self.ninja_api_key = 'API_KEY'
         self.ninja_url = 'https://api.api-ninjas.com/v1/nutrition'
 
     def get_the_video_info(self, query='resep jus'):
