@@ -70,3 +70,8 @@ Botie employs text classification to predict future events and utilizes various 
 8. Make one class to combine 3 class before for deployment
 9. Save as a SavedModel and convert to H5
 10. deployed in flask server
+
+### Result
+<p align="center">
+  <img src="assets/Result.PNG" alt="" height="400" />
+</p>
