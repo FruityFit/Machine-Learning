@@ -3,7 +3,7 @@ from googletrans import Translator
 
 class BotieBotGenerativeAI():
     def __init__(self):
-        self.palm = palm.configure(api_key="AIzaSyAJsMNXM0gZtxKYLx_qnjHAFV-V_2O_r9A")
+        self.palm = palm.configure(api_key="API_KEY")
         self.defaults = {
                         'model': 'models/chat-bison-001',
                         'temperature': 0.25,
