@@ -1,6 +1,8 @@
 from googlesearch import search
 from bs4 import BeautifulSoup
 import requests
+import json
+import os 
 
 class Botie_Google_Bot():
     def __init__(self):
@@ -36,5 +38,25 @@ Botie_aricle_recommended = Botie_Google_Bot()
 def get_history_user(fruit_history="Apel anggur Jeruk"):
     return Botie_aricle_recommended.recommended_article(f"cara membuat jus {fruit_history}")
 
-if __name__ == "__main__":
-    print(get_history_user("Semangka"))#change heare
+classes_indo=['Apel', 'Alpukat', 'Pisang', 'Anggur', 'Jambu', 'Lemon', 'Mangga', 'Jeruk', 'Persik', 'Pir', 'Stroberi', 'Semangka']
+hasil = []
+# if __name__ == "__main__":
+#     for i in classes_indo:
+#         print(i)
+#         x = get_history_user(i)
+#         existing_data.extend(hasil)
+
+
+#     with open('output.json', 'w') as json_file:
+#         json.dump(hasil, json_file, indent=2)  
+#     print(hasil)
+existing_data = []
+for i in classes_indo:
+    x =get_history_user(i)
+    existing_data.extend(x)
+    time.sleep(300)
+print(existing_data)
+with open('output.json', 'w') as json_file:
+    json.dump(existing_data, json_file, indent=2)      
+        
+    
